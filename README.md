@@ -17,28 +17,31 @@ Ensure you have the following environments installed locally:
 ### Installation Steps
 
 1.  **Clone the Repository:**
-2.  git clone
+  ```bash
+    git clone [https://github.com/YOUR_GITHUB_USERNAME/expense-tracker.git](https://github.com/YOUR_GITHUB_USERNAME/expense-tracker.git)
+    cd expense-tracker
+    ```
     
 
-3.  **Environment Configuration:**
+2.  **Environment Configuration:**
     Create a `.env` file inside the root directory or verify that database parameters in `docker-compose.yml` and `settings.py` align regarding credentials (`MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`).
 
-4.  **Build and Spin Up Containers:**
+3.  **Build and Spin Up Containers:**
     ```bash
     docker compose up --build -d
     ```
 
-5.  **Execute Database Schema Migrations:**
+4.  **Execute Database Schema Migrations:**
     ```bash
     docker compose exec backend python manage.py migrate
     ```
 
-6.  **Create Administrative Credentials (Superuser):**
+5.  **Create Administrative Credentials (Superuser):**
     ```bash
     docker compose exec backend python manage.py createsuperuser
     ```
 
-7.  **Access the Application Ecosystem:**
+6.  **Access the Application Ecosystem:**
     * **Frontend Interface:** `http://localhost:3000`
     * **Backend API Root:** `http://localhost:8000/api/`
     * **Django Admin Dashboard:** `http://localhost:8000/admin/`
